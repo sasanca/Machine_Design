@@ -1,7 +1,7 @@
 # Aplicaciones de Diseño de Máquinas para Wolfram Mathemática
 Este repositorio incluye una serie de aplicaciones que permiten realizar el cálculo de elementos de máquinas. Para poder instalar las aplicaciones previamente, es necesario tener instalado previamente la aplicación Wolfram Mathematica v10 o superior
 
-## Instalacion
+## Instalación
 La carpeta install contiene los ficheros necesarios para llevar a cabo la instalación desatendida utilizando windows powershell. El fichero kkk contiene las instrucciones para realizar la instalación manual.
 
 ## Descripción de los archivos:
