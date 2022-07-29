@@ -1,8 +1,8 @@
 # Aplicaciones de Diseño de Máquinas para Wolfram Mathemática
-Este repositorio incluye una serie de aplicaciones que permiten realizar el cálculo de elementos de máquinas. Para poder instalar las aplicaciones previamente, es necesario tener instalado previamente la aplicación Wolfram Mathematica v10 o superior
+Este repositorio incluye una serie de aplicaciones que permiten realizar el cálculo de elementos de máquinas. Para poder instalar las aplicaciones previamente, es necesario tener instalado previamente la aplicación Wolfram Mathematica v10 o superior. Las aplicaciones de Wolfram Mathematica son una combinación de un paquete o script junto con una serie de ficheros de ayuda que se integran en el propio programa.
 
 ## Instalación
-La carpeta install contiene los ficheros necesarios para llevar a cabo la instalación desatendida utilizando windows powershell. El fichero kkk contiene las instrucciones para realizar la instalación manual.
+La carpeta  <a href="https://github.com/sasanca/Machine_Design/tree/main/install" target="_blank">install</a> contiene el  <a href="https://github.com/sasanca/Machine_Design/blob/main/install/mathematica.ps1" target="_blank">fichero necesario</a>  para llevar a cabo la instalación desatendida utilizando windows powershell. El fichero  <a href="https://github.com/sasanca/Machine_Design/blob/main/install/instrucciones.pdf" target="_blank">instrucciones</a> contiene las instrucciones para realizar la instalación manual. Finalmente el fichero  <a href="https://github.com/sasanca/Machine_Design/blob/main/install/Test.nb" target="_blank">Test.nb</a> realiza un pequeño test para comprobar que las aplicaciones están bien instaladas.
 
 ## Descripción de los archivos:
 - La carpeta  <a href="https://github.com/sasanca/Machine_Design/tree/main/Concentradores" target="_blank">Concentradores</a> contiene la aplicación que permite realizar el cálculo de los concentradores de tensión para diferentes geometrías planas y circulares
