@@ -1,0 +1,247 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8526,        238]
+NotebookOptionsPosition[      5747,        170]
+NotebookOutlinePosition[      8253,        228]
+CellTagsIndexPosition[      8210,        225]
+WindowTitle->SigmaEjeFlexion
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["FALLO ESTATICO SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Fallo Est\[AAcute]tico\"\>":>
+       Documentation`HelpLookup["paclet:FalloEstatico/guide/FalloEstatico"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"FalloEstatico/ref/SigmaEjeFlexion\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["FalloEstatico/ref/SigmaEjeFlexion"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                
+                "http://reference.wolfram.com/language/FalloEstatico/ref/\
+SigmaEjeFlexion.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$4007], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "FalloEstatico/ref/SigmaEjeFlexion", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[TextData[{
+ Cell["SigmaEjeFlexion", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"SigmaEjeFlexion", "[", 
+       StyleBox[
+        RowBox[{"M", ",", "d"}],
+        FontSlant->"Italic"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]Calcula la tensi\[OAcute]n normal m\[AAcute]xima de un \
+eje circular sometido a flexi\[OAcute]n. ",
+     StyleBox["M",
+      FontSlant->"Italic"],
+     " es el momento flector que act\[UAcute]a sobre la secci\[OAcute]n \
+calculada y ",
+     StyleBox["d",
+      FontSlant->"Italic"],
+     " es el di\[AAcute]metro de dicha secci\[OAcute]n. Debe tenerse en \
+cuenta que esta tensi\[OAcute]n m\[AAcute]xima se encuentra localizada en las \
+fibras externas. Es de tracci\[OAcute]n en las fibras superiores y de \
+compresi\[OAcute]n en las inferiores (o viceversa, dependiendo del sentido \
+del momento flector), anul\[AAcute]ndose en el eje central o neutro.\n\t La \
+funci\[OAcute]n empleada para el c\[AAcute]lculo es:\n\t \
+SigmaEjeFlexion[M_,d_]:=(32 M)/(\[Pi] d^3)"
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Fallo Est\[AAcute]tico"]],
+   "paclet:FalloEstatico/guide/FalloEstatico"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"SigmaEjeFlexion",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Fallo Est\[AAcute]tico", ButtonData -> 
+         "paclet:FalloEstatico/guide/FalloEstatico", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2017, 10, 3, 15, 3, 0.133735}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "FalloEstatico`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Fallo Estatico Symbol", "language" -> "en", "paclet" -> "FalloEstatico", 
+    "status" -> "None", "summary" -> 
+    "SigmaEjeFlexion[M, d] Calcula la tensi\[OAcute]n normal m\[AAcute]xima \
+de un eje circular sometido a flexi\[OAcute]n. M es el momento flector que \
+act\[UAcute]a sobre la secci\[OAcute]n calculada y d es el di\[AAcute]metro \
+de dicha secci\[OAcute]n. Debe tenerse en cuenta que esta tensi\[OAcute]n m\
+\[AAcute]xima se encuentra localizada en las fibras externas. Es de tracci\
+\[OAcute]n en las fibras superiores y de compresi\[OAcute]n en las inferiores \
+(o viceversa, dependiendo del sentido del momento flector), \
+anul\[AAcute]ndose en el eje central o neutro. La funci\[OAcute]n empleada \
+para el c\[AAcute]lculo es: SigmaEjeFlexion[M_,d_]:=(32 M)/(\\[Pi] d^3)", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "SigmaEjeFlexion", 
+    "titlemodifier" -> "", "windowtitle" -> "SigmaEjeFlexion", "type" -> 
+    "Symbol", "uri" -> "FalloEstatico/ref/SigmaEjeFlexion"}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "10.0 for Linux x86 (64-bit) (June 27, 2014)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[587, 21, 3111, 75, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[3701, 98, 292, 11, 70, "ObjectNameGrid"],
+Cell[3996, 111, 1183, 28, 70, "Usage",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[5204, 143, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[5483, 157, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[5517, 159, 188, 6, 70, "MoreAbout",
+ CellID->1]
+}, Open  ]],
+Cell[5720, 168, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

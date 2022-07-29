@@ -1,0 +1,248 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8686,        239]
+NotebookOptionsPosition[      5825,        170]
+NotebookOutlinePosition[      8413,        229]
+CellTagsIndexPosition[      8370,        226]
+WindowTitle->TauEjeTorsion
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["FALLO ESTATICO SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Fallo Est\[AAcute]tico\"\>":>
+       Documentation`HelpLookup["paclet:FalloEstatico/guide/FalloEstatico"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"FalloEstatico/ref/TauEjeTorsion\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["FalloEstatico/ref/TauEjeTorsion"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/FalloEstatico/ref/\
+TauEjeTorsion.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$5402], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "FalloEstatico/ref/TauEjeTorsion", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[TextData[{
+ Cell["TauEjeTorsion", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"TauEjeTorsion", "[", 
+       StyleBox[
+        RowBox[{"T", ",", "d"}],
+        FontSlant->"Italic"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]Calcula la tensi\[OAcute]n cortante m\[AAcute]xima de \
+un eje circular sometido a torsi\[OAcute]n. ",
+     StyleBox["T",
+      FontSlant->"Italic"],
+     " es el esfuerzo cortante que act\[UAcute]a sobre la secci\[OAcute]n \
+calculada y ",
+     StyleBox["d",
+      FontSlant->"Italic"],
+     " es el di\[AAcute]metro de dicha secci\[OAcute]n.\n\[LineSeparator]Debe \
+tenerse en cuenta que esta tensi\[OAcute]n m\[AAcute]xima se encuentra \
+localizada en la periferia del eje (fibras externas), y es nula en el \
+interior de la pieza. Deber\[AAcute] tomarse especial precauci\[OAcute]n al \
+determinar el plano de acci\[OAcute]n de esta tensi\[OAcute]n ya que este \
+depender\[AAcute] del punto de la secci\[OAcute]n calculado (deber\[AAcute] \
+ser tangente al mismo).\n\t La funci\[OAcute]n empleada para el \
+c\[AAcute]lculo es:\n\t TauEjeTorsion[T_,d_]:=(16 T)/(\[Pi] d^3)"
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Fallo Est\[AAcute]tico"]],
+   "paclet:FalloEstatico/guide/FalloEstatico"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"TauEjeTorsion",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Fallo Est\[AAcute]tico", ButtonData -> 
+         "paclet:FalloEstatico/guide/FalloEstatico", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2017, 10, 3, 15, 3, 4.103952}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "FalloEstatico`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Fallo Estatico Symbol", "language" -> "en", "paclet" -> "FalloEstatico", 
+    "status" -> "None", "summary" -> 
+    "TauEjeTorsion[T, d] Calcula la tensi\[OAcute]n cortante m\[AAcute]xima \
+de un eje circular sometido a torsi\[OAcute]n. T es el esfuerzo cortante que \
+act\[UAcute]a sobre la secci\[OAcute]n calculada y d es el di\[AAcute]metro \
+de dicha secci\[OAcute]n. Debe tenerse en cuenta que esta tensi\[OAcute]n m\
+\[AAcute]xima se encuentra localizada en la periferia del eje (fibras \
+externas), y es nula en el interior de la pieza. Deber\[AAcute] tomarse \
+especial precauci\[OAcute]n al determinar el plano de acci\[OAcute]n de esta \
+tensi\[OAcute]n ya que este depender\[AAcute] del punto de la secci\[OAcute]n \
+calculado (deber\[AAcute] ser tangente al mismo). La funci\[OAcute]n empleada \
+para el c\[AAcute]lculo es: TauEjeTorsion[T_,d_]:=(16 T)/(\\[Pi] d^3)", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> "TauEjeTorsion", 
+    "titlemodifier" -> "", "windowtitle" -> "TauEjeTorsion", "type" -> 
+    "Symbol", "uri" -> "FalloEstatico/ref/TauEjeTorsion"}, 
+  "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "10.0 for Linux x86 (64-bit) (June 27, 2014)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[585, 21, 3086, 74, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[3674, 97, 290, 11, 70, "ObjectNameGrid"],
+Cell[3967, 110, 1290, 29, 70, "Usage",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[5282, 143, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[5561, 157, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[5595, 159, 188, 6, 70, "MoreAbout",
+ CellID->1]
+}, Open  ]],
+Cell[5798, 168, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

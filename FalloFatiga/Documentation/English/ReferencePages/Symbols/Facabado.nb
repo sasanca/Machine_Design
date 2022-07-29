@@ -1,0 +1,293 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9836,        284]
+NotebookOptionsPosition[      6739,        207]
+NotebookOutlinePosition[      9266,        265]
+CellTagsIndexPosition[      9223,        262]
+WindowTitle->Facabado. Factor de acabado
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["FALLO FATIGA SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Fallo por fatiga\"\>":>
+       Documentation`HelpLookup["paclet:FalloFatiga/guide/FalloFatiga"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"FalloFatiga/ref/Facabado\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["FalloFatiga/ref/Facabado"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/FalloFatiga/ref/\
+Facabado.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, 
+            Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2878], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "FalloFatiga/ref/Facabado", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[TextData[{
+ Cell["Facabado. Factor de acabado", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"Facabado", "[", 
+       StyleBox[
+        RowBox[{"acabado", ",", "Sut"}],
+        FontSlant->"Italic"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]Calcula el factor de acabado superficial para los \
+materiales met\[AAcute]licos de uso habitual. El ",
+     StyleBox["acabado",
+      FontSlant->"Italic"],
+     " superficial se introduce mediante el valor num\[EAcute]rico del \
+intervalo de rugosidad superficial (NX). De este modo para introdudir un \
+valor de N5, en ",
+     StyleBox["acabado",
+      FontSlant->"Italic"],
+     " se introducir\[IAcute]a el valor 5. ",
+     StyleBox["Su",
+      FontSlant->"Italic"],
+     "t es el l\[IAcute]mite de rotura a la tracci\[OAcute]n del material (en \
+MPa). No se debe utilizar para otros materiales.\t\n \t Se calcula mediante \
+la expresi\[OAcute]n:\[LineSeparator]\[LineSeparator]Facabado[acabado_, Sut_] \
+:=  If[acabado <= 4, 1,   If[acabado <= 6, 1.58 Sut^-0.085, If[acabado <= 9, \
+4.51 Sut^-0.265, If[acabado <= 11, 57.7 Sut^-0.718, 272 Sut^-0.995]]]]"
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[Cell[TextData[{
+   Cell[BoxData[
+    InterpretationBox[
+     StyleBox[
+      GraphicsBox[{},
+       BaselinePosition->Baseline,
+       ImageSize->{6, 0}],
+      CacheGraphics->False],
+     Spacer[6]]]],
+   "Details"
+  }], "NotesFrameText"],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell["Dise\[NTilde]o en Ingenier\[IAcute]a Mec\[AAcute]nica. Joseph Shigley & \
+Minske", "Notes",
+ CellID->1067943069],
+
+Cell["", "SectionFooterSpacer"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Fallo por fatiga"]],"paclet:FalloFatiga/guide/FalloFatiga"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Facabado. Factor de acabado",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Fallo por fatiga", ButtonData -> 
+         "paclet:FalloFatiga/guide/FalloFatiga", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2017, 11, 7, 17, 56, 32.837437}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "FalloFatiga`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Fallo Fatiga Symbol", "language" -> "en", "paclet" -> "FalloFatiga", 
+    "status" -> "None", "summary" -> 
+    "Facabado[acabado, Sut] Calcula el factor de acabado superficial para los \
+materiales met\[AAcute]licos de uso habitual. El acabado superficial se \
+introduce mediante el valor num\[EAcute]rico del intervalo de rugosidad \
+superficial (NX). De este modo para introdudir un valor de N5, en acabado se \
+introducir\[IAcute]a el valor 5. Sut es el l\[IAcute]mite de rotura a la \
+tracci\[OAcute]n del material (en MPa). No se debe utilizar para otros \
+materiales. Se calcula mediante la expresi\[OAcute]n: Facabado[acabado_, \
+Sut_] := If[acabado <= 4, 1, If[acabado <= 6, 1.58 Sut^-0.085, If[acabado <= \
+9, 4.51 Sut^-0.265, If[acabado <= 11, 57.7 Sut^-0.718, 272 Sut^-0.995]]]]", 
+    "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "Facabado. Factor de acabado", "titlemodifier" -> "", "windowtitle" -> 
+    "Facabado. Factor de acabado", "type" -> "Symbol", "uri" -> 
+    "FalloFatiga/ref/Facabado"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "10.0 for Linux x86 (64-bit) (June 27, 2014)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[599, 21, 3044, 74, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[3646, 97, 304, 11, 70, "ObjectNameGrid"],
+Cell[3953, 110, 1276, 30, 70, "Usage",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[5254, 144, 730, 24, 70, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1],
+Cell[5987, 170, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[6021, 172, 118, 2, 70, "Notes",
+ CellID->1067943069],
+Cell[6142, 176, 31, 0, 70, "SectionFooterSpacer"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[6210, 181, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[6489, 195, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[6523, 197, 174, 5, 70, "MoreAbout",
+ CellID->1]
+}, Open  ]],
+Cell[6712, 205, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

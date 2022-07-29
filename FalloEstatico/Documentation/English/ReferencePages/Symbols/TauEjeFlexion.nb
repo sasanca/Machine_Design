@@ -1,0 +1,249 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8590,        240]
+NotebookOptionsPosition[      5832,        173]
+NotebookOutlinePosition[      8317,        230]
+CellTagsIndexPosition[      8274,        227]
+WindowTitle->TauEjeFlexion
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["FALLO ESTATICO SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Fallo Est\[AAcute]tico\"\>":>
+       Documentation`HelpLookup["paclet:FalloEstatico/guide/FalloEstatico"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"FalloEstatico/ref/TauEjeFlexion\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["FalloEstatico/ref/TauEjeFlexion"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/FalloEstatico/ref/\
+TauEjeFlexion.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$4937], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "FalloEstatico/ref/TauEjeFlexion", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[TextData[{
+ Cell["TauEjeFlexion", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"TauEjeFlexion", "[", 
+       RowBox[{
+        StyleBox["V",
+         FontSlant->"Italic"], 
+        StyleBox[",",
+         FontSlant->"Plain"], 
+        StyleBox["d",
+         FontSlant->"Italic"]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]Calcula la tensi\[OAcute]n cortante (Collignon) m\
+\[AAcute]xima de un eje circular sometido a flexi\[OAcute]n. ",
+     StyleBox["V",
+      FontSlant->"Italic"],
+     " es el esfuerzo cortante que act\[UAcute]a sobre la secci\[OAcute]n \
+calculada y ",
+     StyleBox["d",
+      FontSlant->"Italic"],
+     " es el di\[AAcute]metro de dicha secci\[OAcute]n.\n\[LineSeparator]Debe \
+tenerse en cuenta que esta tensi\[OAcute]n m\[AAcute]xima se encuentra \
+localizada en la fibra neutra y m\[IAcute]nima en las fibras externas, al \
+contrario de lo que ocurre con las tensiones normales de traccion/compresi\
+\[OAcute]n tambi\[EAcute]n generadas por la flexi\[OAcute]n.\n\n\t La funci\
+\[OAcute]n empleada para el c\[AAcute]lculo es:\n\t ",
+     "TauEjeFlexion[V_,d_]:=(16 V)/(3\[Pi] d^2)"
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Fallo Est\[AAcute]tico"]],
+   "paclet:FalloEstatico/guide/FalloEstatico"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"TauEjeFlexion",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Fallo Est\[AAcute]tico", ButtonData -> 
+         "paclet:FalloEstatico/guide/FalloEstatico", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2017, 10, 3, 15, 3, 2.830204}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "FalloEstatico`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Fallo Estatico Symbol", "language" -> "en", "paclet" -> "FalloEstatico", 
+    "status" -> "None", "summary" -> 
+    "TauEjeFlexion[V, d] Calcula la tensi\[OAcute]n cortante (Collignon) m\
+\[AAcute]xima de un eje circular sometido a flexi\[OAcute]n. V es el esfuerzo \
+cortante que act\[UAcute]a sobre la secci\[OAcute]n calculada y d es el di\
+\[AAcute]metro de dicha secci\[OAcute]n. Debe tenerse en cuenta que esta \
+tensi\[OAcute]n m\[AAcute]xima se encuentra localizada en la fibra neutra y m\
+\[IAcute]nima en las fibras externas, al contrario de lo que ocurre con las \
+tensiones normales de traccion/compresi\[OAcute]n tambi\[EAcute]n generadas \
+por la flexi\[OAcute]n. La funci\[OAcute]n empleada para el c\[AAcute]lculo \
+es: TauEjeFlexion[V_,d_]:=(16 V)/(3\\[Pi] d^2)", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "TauEjeFlexion", "titlemodifier" -> "", 
+    "windowtitle" -> "TauEjeFlexion", "type" -> "Symbol", "uri" -> 
+    "FalloEstatico/ref/TauEjeFlexion"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "10.0 for Linux x86 (64-bit) (June 27, 2014)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[585, 21, 3086, 74, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[3674, 97, 290, 11, 70, "ObjectNameGrid"],
+Cell[3967, 110, 1297, 32, 70, "Usage",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[5289, 146, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[5568, 160, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[5602, 162, 188, 6, 70, "MoreAbout",
+ CellID->1]
+}, Open  ]],
+Cell[5805, 171, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

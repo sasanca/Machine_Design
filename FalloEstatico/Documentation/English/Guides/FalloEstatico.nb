@@ -1,0 +1,364 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12127,        355]
+NotebookOptionsPosition[      9056,        276]
+NotebookOutlinePosition[     11110,        321]
+CellTagsIndexPosition[     11067,        318]
+WindowTitle->Fallo Est\341tico
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["FALLO ESTATICO GUIDE", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Functions",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Functions", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Dowling\"\>":>Documentation`HelpLookup[
+       "paclet:FalloEstatico/ref/Dowling"], "\<\"Mises\"\>":>
+       Documentation`HelpLookup[
+       "paclet:FalloEstatico/ref/Mises"], "\<\"Principales\"\>":>
+       Documentation`HelpLookup[
+       "paclet:FalloEstatico/ref/Principales"], "\<\"SigmaEjeFlexion\"\>":>
+       Documentation`HelpLookup[
+       "paclet:FalloEstatico/ref/SigmaEjeFlexion"], \
+"\<\"SigmaEjeTraccion\"\>":>Documentation`HelpLookup[
+       "paclet:FalloEstatico/ref/SigmaEjeTraccion"], "\<\"TauEjeFlexion\"\>":>
+       Documentation`HelpLookup[
+       "paclet:FalloEstatico/ref/TauEjeFlexion"], "\<\"TauEjeTorsion\"\>":>
+       Documentation`HelpLookup[
+       "paclet:FalloEstatico/ref/TauEjeTorsion"], "\<\"Tresca\"\>":>
+       Documentation`HelpLookup["paclet:FalloEstatico/ref/Tresca"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"GuideFunction"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"FalloEstatico/guide/FalloEstatico\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["FalloEstatico/guide/FalloEstatico"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/FalloEstatico/guide/\
+FalloEstatico.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2022], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "FalloEstatico/guide/FalloEstatico", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Fallo Est\[AAcute]tico", "GuideTitle",
+ CellID->942062912],
+
+Cell["\<\
+Este paquete contiene las f\[OAcute]rmulas b\[AAcute]sicas empleadas en el c\
+\[AAcute]lculo est\[AAcute]tico de elementos de m\[AAcute]quinas. La \
+formulaci\[OAcute]n est\[AAcute] extraida de la bibliograf\[IAcute]a b\
+\[AAcute]sica del Dise\[NTilde]o de M\[AAcute]quinas.
+El paquete ha sido desarrollado por el prof. Samuel S\[AAcute]nchez Caballero \
+para uso exclusivo de sus alumnos, y su distribuci\[OAcute]n est\[AAcute] \
+prohibida m\[AAcute]s all\[AAcute] del \[AAcute]mbito acad\[EAcute]mico.\
+\>", "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Reference"
+}], "GuideReferenceSection",
+ WholeCellGroupOpener->True],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell["Estado tensional triaxial", "GuideText",
+ FontWeight->"Bold",
+ CellID->1527777406],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Principales"]],"paclet:FalloEstatico/ref/Principales"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " C\[AAcute]lculo de las tres tensiones principales del estado triaxial \
+complejo"
+}], "GuideText",
+ CellID->2113897105],
+
+Cell["Teor\[IAcute]as de fallo para materiales d\[UAcute]ctiles", "GuideText",
+ FontWeight->"Bold",
+ CellID->243947975],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Tresca"]],"paclet:FalloEstatico/ref/Tresca"},
+   "RefLink",
+   BaseStyle->{"InlineFormula", FontWeight -> "Bold"}]], "InlineFormula"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " C\[AAcute]lculo de la tensi\[OAcute]n equivalente mediante la \
+teor\[IAcute]a de Tresca"
+}], "GuideText",
+ CellID->1282395138],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Mises"]],"paclet:FalloEstatico/ref/Mises"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " C\[AAcute]lculo de la tensi\[OAcute]n equivalente mediante la \
+teor\[IAcute]a de Von Mises"
+}], "GuideText",
+ CellID->1387883008],
+
+Cell["Teor\[IAcute]as de fallo para materiales fr\[AAcute]giles", "GuideText",
+ FontWeight->"Bold",
+ CellID->1956106027],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Dowling"]],"paclet:FalloEstatico/ref/Dowling"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ "  C\[AAcute]lculo de la tensi\[OAcute]n equivalente mediante la teor\
+\[IAcute]a de Coulomb-Mohr modificada."
+}], "GuideText",
+ CellID->1463276848],
+
+Cell["C\[AAcute]lculo de tensiones en ejes", "GuideText",
+ FontWeight->"Bold",
+ CellID->650736964],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["SigmaEjeTraccion"]],
+    "paclet:FalloEstatico/ref/SigmaEjeTraccion"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans",
+  FontWeight->"Bold"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " C\[AAcute]lculo de la tensi\[OAcute]n normal m\[AAcute]xima de un eje \
+circular sometido a tracci\[OAcute]n/compresi\[OAcute]n."
+}], "GuideText",
+ CellID->2094456019],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["SigmaEjeFlexion"]],"paclet:FalloEstatico/ref/SigmaEjeFlexion"},
+   
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " C",
+ "\[AAcute]",
+ "lculo de la tensi\[OAcute]n normal m\[AAcute]xima de un eje circular \
+sometido a flexi\[OAcute]n."
+}], "GuideText",
+ CellID->526371085],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["TauEjeTorsion"]],"paclet:FalloEstatico/ref/TauEjeTorsion"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " C",
+ "\[AAcute]",
+ "lculo de la tensi\[OAcute]n cortante m\[AAcute]xima de un eje circular \
+sometido a torsi\[OAcute]n."
+}], "GuideText",
+ CellID->926907674],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["TauEjeFlexion"]],"paclet:FalloEstatico/ref/TauEjeFlexion"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " C",
+ "\[AAcute]lculo de",
+ " la tensi\[OAcute]n cortante (Collignon) m\[AAcute]xima de un eje circular \
+sometido a flexi\[OAcute]n."
+}], "GuideText",
+ CellID->836205250]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Fallo Est\[AAcute]tico",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "GuideColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2017, 10, 3, 15, 2, 51.926134}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "FalloEstatico`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Fallo Estatico Guide", "language" -> "en", "paclet" -> "FalloEstatico", 
+    "status" -> "None", "summary" -> 
+    "Este paquete contiene las f\[OAcute]rmulas b\[AAcute]sicas empleadas en \
+el c\[AAcute]lculo est\[AAcute]tico de elementos de m\[AAcute]quinas. La \
+formulaci\[OAcute]n est\[AAcute] extraida de la bibliograf\[IAcute]a b\
+\[AAcute]sica del Dise\[NTilde]o de M\[AAcute]quinas. El paquete ha sido \
+desarrollado por el prof. Samuel S\[AAcute]nchez Caballero para uso exclusivo \
+de sus alumnos, y su distribuci\[OAcute]n est\[AAcute] prohibida m\[AAcute]s \
+all\[AAcute] del \[AAcute]mbito acad\[EAcute]mico.", "synonyms" -> {}, 
+    "tabletags" -> DocumentationBuild`Make`Private`tabletaggingrules$1940, 
+    "title" -> "Fallo Est\[AAcute]tico", "titlemodifier" -> "", "windowtitle" -> 
+    "Fallo Est\[AAcute]tico", "type" -> "Guide", "uri" -> 
+    "FalloEstatico/guide/FalloEstatico"}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[589, 21, 3789, 87, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4403, 112, 64, 1, 70, "GuideTitle",
+ CellID->942062912],
+Cell[4470, 115, 557, 9, 70, "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5064, 129, 257, 11, 70, "GuideReferenceSection"],
+Cell[5324, 142, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[5358, 144, 88, 2, 70, "GuideText",
+ CellID->1527777406],
+Cell[5449, 148, 367, 11, 70, "GuideText",
+ CellID->2113897105],
+Cell[5819, 161, 119, 2, 70, "GuideText",
+ CellID->243947975],
+Cell[5941, 165, 379, 11, 70, "GuideText",
+ CellID->1282395138],
+Cell[6323, 178, 366, 11, 70, "GuideText",
+ CellID->1387883008],
+Cell[6692, 191, 120, 2, 70, "GuideText",
+ CellID->1956106027],
+Cell[6815, 195, 386, 11, 70, "GuideText",
+ CellID->1463276848],
+Cell[7204, 208, 98, 2, 70, "GuideText",
+ CellID->650736964],
+Cell[7305, 212, 452, 13, 70, "GuideText",
+ CellID->2094456019],
+Cell[7760, 227, 416, 14, 70, "GuideText",
+ CellID->526371085],
+Cell[8179, 243, 410, 13, 70, "GuideText",
+ CellID->926907674],
+Cell[8592, 258, 422, 13, 70, "GuideText",
+ CellID->836205250]
+}, Open  ]],
+Cell[9029, 274, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

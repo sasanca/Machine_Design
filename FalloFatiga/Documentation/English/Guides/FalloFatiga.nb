@@ -1,0 +1,489 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14898,        480]
+NotebookOptionsPosition[     10918,        367]
+NotebookOutlinePosition[     12937,        412]
+CellTagsIndexPosition[     12894,        409]
+WindowTitle->Fallo por fatiga
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["FALLO FATIGA GUIDE", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Functions",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Functions", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Facabado\"\>":>Documentation`HelpLookup[
+       "paclet:FalloFatiga/ref/Facabado"], "\<\"Fcarga\"\>":>
+       Documentation`HelpLookup[
+       "paclet:FalloFatiga/ref/Fcarga"], "\<\"Fconfiabilidad\"\>":>
+       Documentation`HelpLookup[
+       "paclet:FalloFatiga/ref/Fconfiabilidad"], "\<\"FKf\"\>":>
+       Documentation`HelpLookup["paclet:FalloFatiga/ref/FKf"], "\<\"FNW\"\>":>
+       Documentation`HelpLookup["paclet:FalloFatiga/ref/FNW"], "\<\"Fq\"\>":>
+       Documentation`HelpLookup[
+       "paclet:FalloFatiga/ref/Fq"], "\<\"Fraiza\"\>":>
+       Documentation`HelpLookup[
+       "paclet:FalloFatiga/ref/Fraiza"], "\<\"FSeK\"\>":>
+       Documentation`HelpLookup[
+       "paclet:FalloFatiga/ref/FSeK"], "\<\"FSeKS\"\>":>
+       Documentation`HelpLookup[
+       "paclet:FalloFatiga/ref/FSeKS"], "\<\"FSW\"\>":>
+       Documentation`HelpLookup[
+       "paclet:FalloFatiga/ref/FSW"], "\<\"Ftamano\"\>":>
+       Documentation`HelpLookup[
+       "paclet:FalloFatiga/ref/Ftamano"], "\<\"Ftemperatura\"\>":>
+       Documentation`HelpLookup[
+       "paclet:FalloFatiga/ref/Ftemperatura"], "\<\"nGoodman\"\>":>
+       Documentation`HelpLookup["paclet:FalloFatiga/ref/nGoodman"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"GuideFunction"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"FalloFatiga/guide/FalloFatiga\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["FalloFatiga/guide/FalloFatiga"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/FalloFatiga/guide/\
+FalloFatiga.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2246], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "FalloFatiga/guide/FalloFatiga", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Fallo por fatiga", "GuideTitle",
+ CellID->942062912],
+
+Cell["\<\
+Este paquete contiene las f\[OAcute]rmulas b\[AAcute]sicas empleadas en el c\
+\[AAcute]lculo a fatiga de elementos de m\[AAcute]quinas. La formulaci\
+\[OAcute]n est\[AAcute] extraida de la bibliograf\[IAcute]a b\[AAcute]sica \
+del Dise\[NTilde]o de M\[AAcute]quinas.
+El paquete ha sido desarrollado por el prof. Samuel S\[AAcute]nchez Caballero \
+para uso exclusivo de sus alumnos, y su distribuci\[OAcute]n est\[AAcute] \
+prohibida m\[AAcute]s all\[AAcute] del \[AAcute]mbito acad\[EAcute]mico.\
+\>", "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Reference"
+}], "GuideReferenceSection",
+ WholeCellGroupOpener->True],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell["L\[IAcute]mite de resistencia a la fatiga corregido para aceros", \
+"GuideText",
+ FontWeight->"Bold",
+ CellID->150433409],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["FSeK"]],"paclet:FalloFatiga/ref/FSeK"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " L\[IAcute]mite de resistencia a fatiga corregido"
+}], "GuideText",
+ CellID->1254845658],
+
+Cell[CellGroupData[{
+
+Cell["\t", "GuideDelimiter",
+ CellID->1331385968],
+
+Cell["Factores correctores del l\[IAcute]mite de resistencia a la fatiga", \
+"GuideText",
+ FontWeight->"Bold",
+ CellID->108445508],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Facabado"]],"paclet:FalloFatiga/ref/Facabado"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Factor de acabado superficial"
+}], "GuideText",
+ CellID->2074786090],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Ftamano"]],"paclet:FalloFatiga/ref/Ftamano"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Factor de tama\[NTilde]o"
+}], "GuideText",
+ CellID->1478953921],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Fcarga"]],"paclet:FalloFatiga/ref/Fcarga"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Factor de carga"
+}], "GuideText",
+ CellID->205563145],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Fconfiabilidad"]],"paclet:FalloFatiga/ref/Fconfiabilidad"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Factor de confiabilidad"
+}], "GuideText",
+ CellID->1515938499],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Ftemperatura"]],"paclet:FalloFatiga/ref/Ftemperatura"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Factor de temperatura"
+}], "GuideText",
+ CellID->1790919988]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\t", "GuideDelimiter",
+ CellID->439359735],
+
+Cell["Concentraci\[OAcute]n de tensiones", "GuideText",
+ FontWeight->"Bold",
+ CellID->1044648570],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["FKf"]],"paclet:FalloFatiga/ref/FKf"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Factor de concentraci\[OAcute]n de tensiones corregido a fatiga"
+}], "GuideText",
+ CellID->400489605],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Fraiza"]],"paclet:FalloFatiga/ref/Fraiza"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Raiz de la constante de Neuber "
+}], "GuideText",
+ CellID->1756143185],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["Fq"]],"paclet:FalloFatiga/ref/Fq"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Sensibilidad a la entalla"
+}], "GuideText",
+ CellID->1958908676]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\t", "GuideDelimiter",
+ CellID->866704140],
+
+Cell["Coeficiente de seguridad a fatiga", "GuideText",
+ FontWeight->"Bold",
+ CellID->424096650],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["nGoodman"]],"paclet:FalloFatiga/ref/nGoodman"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ "  Coeficiente de seguridad de Goodman"
+}], "GuideText",
+ CellID->1117684518]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\t", "GuideDelimiter",
+ CellID->1252091658],
+
+Cell["Duraci\[OAcute]n", "GuideText",
+ FontWeight->"Bold",
+ CellID->1423727821],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["FNW"]],"paclet:FalloFatiga/ref/FNW"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Duraci\[OAcute]n para una tensi\[OAcute]n alternante dada"
+}], "GuideText",
+ CellID->606839724],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["FSW"]],"paclet:FalloFatiga/ref/FSW"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Tensi\[OAcute]n alternante m\[AAcute]xima para una duraci\[OAcute]n dada"
+}], "GuideText",
+ CellID->1030067927]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\t", "GuideDelimiter",
+ CellID->797702600],
+
+Cell["Da\[NTilde]o acumulativo por fatiga", "GuideText",
+ FontWeight->"Bold",
+ CellID->1578236189],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["FSeKS"]],"paclet:FalloFatiga/ref/FSeKS"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Limite de resistencia a la fatiga tras el da\[NTilde]o"
+}], "GuideText",
+ CellID->837133277]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Fallo por fatiga",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "GuideColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Wolfram Language", ButtonData -> "paclet:guide/WolframRoot", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2017, 11, 7, 17, 56, 31.034575}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "FalloFatiga`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Fallo Fatiga Guide", "language" -> "en", "paclet" -> "FalloFatiga", 
+    "status" -> "None", "summary" -> 
+    "Este paquete contiene las f\[OAcute]rmulas b\[AAcute]sicas empleadas en \
+el c\[AAcute]lculo a fatiga de elementos de m\[AAcute]quinas. La formulaci\
+\[OAcute]n est\[AAcute] extraida de la bibliograf\[IAcute]a b\[AAcute]sica \
+del Dise\[NTilde]o de M\[AAcute]quinas. El paquete ha sido desarrollado por \
+el prof. Samuel S\[AAcute]nchez Caballero para uso exclusivo de sus alumnos, \
+y su distribuci\[OAcute]n est\[AAcute] prohibida m\[AAcute]s all\[AAcute] del \
+\[AAcute]mbito acad\[EAcute]mico.", "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$2115, "title" -> 
+    "Fallo por fatiga", "titlemodifier" -> "", "windowtitle" -> 
+    "Fallo por fatiga", "type" -> "Guide", "uri" -> 
+    "FalloFatiga/guide/FalloFatiga"}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[588, 21, 4140, 95, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4753, 120, 58, 1, 70, "GuideTitle",
+ CellID->942062912],
+Cell[4814, 123, 549, 9, 70, "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5400, 137, 257, 11, 70, "GuideReferenceSection"],
+Cell[5660, 150, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[5694, 152, 127, 3, 70, "GuideText",
+ CellID->150433409],
+Cell[5824, 157, 319, 10, 70, "GuideText",
+ CellID->1254845658],
+Cell[CellGroupData[{
+Cell[6168, 171, 49, 1, 70, "GuideDelimiter",
+ CellID->1331385968],
+Cell[6220, 174, 130, 3, 70, "GuideText",
+ CellID->108445508],
+Cell[6353, 179, 308, 10, 70, "GuideText",
+ CellID->2074786090],
+Cell[6664, 191, 301, 10, 70, "GuideText",
+ CellID->1478953921],
+Cell[6968, 203, 289, 10, 70, "GuideText",
+ CellID->205563145],
+Cell[7260, 215, 314, 10, 70, "GuideText",
+ CellID->1515938499],
+Cell[7577, 227, 308, 10, 70, "GuideText",
+ CellID->1790919988]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7922, 242, 48, 1, 70, "GuideDelimiter",
+ CellID->439359735],
+Cell[7973, 245, 97, 2, 70, "GuideText",
+ CellID->1044648570],
+Cell[8073, 249, 331, 10, 70, "GuideText",
+ CellID->400489605],
+Cell[8407, 261, 306, 10, 70, "GuideText",
+ CellID->1756143185],
+Cell[8716, 273, 292, 10, 70, "GuideText",
+ CellID->1958908676]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9045, 288, 48, 1, 70, "GuideDelimiter",
+ CellID->866704140],
+Cell[9096, 291, 95, 2, 70, "GuideText",
+ CellID->424096650],
+Cell[9194, 295, 315, 10, 70, "GuideText",
+ CellID->1117684518]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9546, 310, 49, 1, 70, "GuideDelimiter",
+ CellID->1252091658],
+Cell[9598, 313, 79, 2, 70, "GuideText",
+ CellID->1423727821],
+Cell[9680, 317, 325, 10, 70, "GuideText",
+ CellID->606839724],
+Cell[10008, 329, 341, 10, 70, "GuideText",
+ CellID->1030067927]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10386, 344, 48, 1, 70, "GuideDelimiter",
+ CellID->797702600],
+Cell[10437, 347, 98, 2, 70, "GuideText",
+ CellID->1578236189],
+Cell[10538, 351, 326, 10, 70, "GuideText",
+ CellID->837133277]
+}, Open  ]]
+}, Open  ]],
+Cell[10891, 365, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,239 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8208,        230]
+NotebookOptionsPosition[      5544,        164]
+NotebookOutlinePosition[      7935,        220]
+CellTagsIndexPosition[      7892,        217]
+WindowTitle->Fcarga. Factor de carga
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["FALLO FATIGA SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Fallo por fatiga\"\>":>
+       Documentation`HelpLookup["paclet:FalloFatiga/guide/FalloFatiga"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"FalloFatiga/ref/Fcarga\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["FalloFatiga/ref/Fcarga"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/FalloFatiga/ref/Fcarga.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$3348], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "FalloFatiga/ref/Fcarga", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[TextData[{
+ Cell["Fcarga. Factor de carga", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"Fcarga", "[", 
+       StyleBox[
+        RowBox[{"tipodecarga", ",", "Sut"}],
+        FontSlant->"Italic"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]Calcula el factor de carga en funci\[OAcute]n del tipo \
+de carga para los materiales met\[AAcute]licos de uso habitual. El ",
+     StyleBox["tipodecarga ",
+      FontSlant->"Italic"],
+     "se introduce como: \"flexion\",  \"torsion\", \"compresion\" o \
+\"traccion\" (se debe introducir sin acentos y entre comillas).   No se debe \
+utilizar para otros materiales.\n \t Se calcula mediante la \
+expresi\[OAcute]n:\[LineSeparator]\[LineSeparator]Fcarga[tipodecarga_, Sut_] \
+:=  Which[\"flexion\" == tipodecarga || \"torsion\" == tipodecarga ||   \
+\"compresion\" == tipodecarga, 1, \"traccion\" == tipodecarga , 1.43 \
+Sut^-0.078]"
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Fallo por fatiga"]],"paclet:FalloFatiga/guide/FalloFatiga"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Fcarga. Factor de carga",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Fallo por fatiga", ButtonData -> 
+         "paclet:FalloFatiga/guide/FalloFatiga", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2017, 11, 7, 17, 56, 34.183820}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "FalloFatiga`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Fallo Fatiga Symbol", "language" -> "en", "paclet" -> "FalloFatiga", 
+    "status" -> "None", "summary" -> 
+    "Fcarga[tipodecarga, Sut] Calcula el factor de carga en funci\[OAcute]n \
+del tipo de carga para los materiales met\[AAcute]licos de uso habitual. El \
+tipodecarga se introduce como: \"flexion\", \"torsion\", \"compresion\" o \
+\"traccion\" (se debe introducir sin acentos y entre comillas). No se debe \
+utilizar para otros materiales. Se calcula mediante la expresi\[OAcute]n: \
+Fcarga[tipodecarga_, Sut_] := Which[\"flexion\" == tipodecarga || \"torsion\" \
+== tipodecarga || \"compresion\" == tipodecarga, 1, \"traccion\" == \
+tipodecarga , 1.43 Sut^-0.078]", "synonyms" -> {}, "tabletags" -> {}, "title" -> 
+    "Fcarga. Factor de carga", "titlemodifier" -> "", "windowtitle" -> 
+    "Fcarga. Factor de carga", "type" -> "Symbol", "uri" -> 
+    "FalloFatiga/ref/Fcarga"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "10.0 for Linux x86 (64-bit) (June 27, 2014)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[595, 21, 3037, 74, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[3635, 97, 300, 11, 70, "ObjectNameGrid"],
+Cell[3938, 110, 1052, 24, 70, "Usage",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[5015, 138, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[5294, 152, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[5328, 154, 174, 5, 70, "MoreAbout",
+ CellID->1]
+}, Open  ]],
+Cell[5517, 162, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,239 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8349,        230]
+NotebookOptionsPosition[      5607,        163]
+NotebookOutlinePosition[      8076,        220]
+CellTagsIndexPosition[      8033,        217]
+WindowTitle->Fconfiabilidad. Factor de confiabilidad
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["FALLO FATIGA SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Related Guides",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Related Guides", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Fallo por fatiga\"\>":>
+       Documentation`HelpLookup["paclet:FalloFatiga/guide/FalloFatiga"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"MoreAbout"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"FalloFatiga/ref/Fconfiabilidad\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["FalloFatiga/ref/Fconfiabilidad"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/FalloFatiga/ref/\
+Fconfiabilidad.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$3813], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "FalloFatiga/ref/Fconfiabilidad", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[TextData[{
+ Cell["Fconfiabilidad. Factor de confiabilidad", "ObjectName"],
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{8, 0}],
+    CacheGraphics->False],
+   Spacer[8]]]],
+ Cell[BoxData[""], "ObjectNameTranslation"]
+}], "ObjectNameGrid"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"Fconfiabilidad", "[", 
+       StyleBox["p",
+        FontSlant->"Italic"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]Calcula el factor de confiabilidad para los materiales \
+met\[AAcute]licos de uso habitual. La confiabilidad ",
+     StyleBox["p",
+      FontSlant->"Italic"],
+     " se introduce mediante su valor num\[EAcute]rico porcentual (sin el s\
+\[IAcute]mbolo del tanto por cien). P.e. una confiabilidad del 99% se \
+introducir\[IAcute]a como 99. No se debe utilizar para otros materiales.\
+\[LineSeparator]\n\tLa f\[OAcute]rmula empleada para su c\[AAcute]lculo es:\t\
+\[LineSeparator]Fconfiabilidad[P_] :=  If[P <= 50, 1,   If[P <= 90, .897,    \
+If[P <= 95, 0.87,     If[P <= 99, .814,  If[P <= 99.9, 0.753,  If[P <= 99.99, \
+0.702, If[P <= 99.999, 0.659, 0.62]]]]]]]\t"
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Related Guides"
+}], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[BoxData[
+ TemplateBox[{Cell[
+    TextData["Fallo por fatiga"]],"paclet:FalloFatiga/guide/FalloFatiga"},
+  "RefLink",
+  BaseStyle->"MoreAbout"]], "MoreAbout",
+ CellID->1]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Fconfiabilidad. Factor de confiabilidad",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Fallo por fatiga", ButtonData -> 
+         "paclet:FalloFatiga/guide/FalloFatiga", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "HasOptions" -> False, "ExampleCounter" -> 1, "NeedPlatMsgIn" -> 
+  None, "RootCaptions" -> "", 
+  "Metadata" -> {
+   "built" -> "{2017, 11, 7, 17, 56, 35.453589}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "FalloFatiga`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Fallo Fatiga Symbol", "language" -> "en", "paclet" -> "FalloFatiga", 
+    "status" -> "None", "summary" -> 
+    "Fconfiabilidad[p] Calcula el factor de confiabilidad para los materiales \
+met\[AAcute]licos de uso habitual. La confiabilidad p se introduce mediante \
+su valor num\[EAcute]rico porcentual (sin el s\[IAcute]mbolo del tanto por \
+cien). P.e. una confiabilidad del 99% se introducir\[IAcute]a como 99. No se \
+debe utilizar para otros materiales. La f\[OAcute]rmula empleada para su c\
+\[AAcute]lculo es: Fconfiabilidad[P_] := If[P <= 50, 1, If[P <= 90, .897, \
+If[P <= 95, 0.87, If[P <= 99, .814, If[P <= 99.9, 0.753, If[P <= 99.99, \
+0.702, If[P <= 99.999, 0.659, 0.62]]]]]]] ", "synonyms" -> {}, 
+    "tabletags" -> {}, "title" -> "Fconfiabilidad. Factor de confiabilidad", 
+    "titlemodifier" -> "", "windowtitle" -> 
+    "Fconfiabilidad. Factor de confiabilidad", "type" -> "Symbol", "uri" -> 
+    "FalloFatiga/ref/Fconfiabilidad"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> "10.0 for Linux x86 (64-bit) (June 27, 2014)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[611, 21, 3070, 74, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[3684, 97, 316, 11, 70, "ObjectNameGrid"],
+Cell[4003, 110, 1050, 23, 70, "Usage",
+ CellID->982511436],
+Cell[CellGroupData[{
+Cell[5078, 137, 276, 12, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[5357, 151, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[5391, 153, 174, 5, 70, "MoreAbout",
+ CellID->1]
+}, Open  ]],
+Cell[5580, 161, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

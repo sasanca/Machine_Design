@@ -1,0 +1,455 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     20539,        446]
+NotebookOptionsPosition[     18228,        386]
+NotebookOutlinePosition[     20012,        428]
+CellTagsIndexPosition[     19969,        425]
+WindowTitle->Orificios en ejes
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["CONCENTRADORES GUIDE", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "Functions",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"Functions", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"KtEjeFlexionAgujero\"\>":>
+       Documentation`HelpLookup[
+       "paclet:Concentradores/ref/KtEjeFlexionAgujero"], \
+"\<\"KtEjeTorsionAgujero\"\>":>Documentation`HelpLookup[
+       "paclet:Concentradores/ref/KtEjeTorsionAgujero"], \
+"\<\"KtEjeTraccionAgujero\"\>":>Documentation`HelpLookup[
+       "paclet:Concentradores/ref/KtEjeTraccionAgujero"]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"GuideFunction"]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox[
+        InterpretationBox[Cell[TextData[{
+          "URL",
+          StyleBox[" \[FilledDownTriangle]", "AnchorBarArrow",
+           StripOnInput->False]
+         }]],
+         TextCell[
+          Row[{"URL", 
+            Style[" \[FilledDownTriangle]", "AnchorBarArrow"]}]]],
+        StripOnInput->False], {"\<\"Concentradores/guide/AgujeroEje\"\>":>
+       None, "\<\"Copy Wolfram Documentation Center URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["Concentradores/guide/AgujeroEje"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web URL\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/language/Concentradores/guide/\
+AgujeroEje.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+             If[
+              TrueQ[DocumentationBuild`Make`Private`wsmlinkQ$2756], 
+              "http://reference.wolfram.com/system-modeler/", 
+              "http://reference.wolfram.com/language/"], 
+             "Concentradores/guide/AgujeroEje", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic,
+       MenuStyle->"URLMenu"]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ GridBoxOptions->{GridBoxItemSize->{"Columns" -> {
+     Scaled[0.65], {
+      Scaled[0.34]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+   "RowsIndexed" -> {}}},
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Orificios en ejes", "GuideTitle",
+ CellID->942062912],
+
+Cell["\<\
+C\[AAcute]lculo de los concentradores para los orificios en ejes. Debe \
+tenerse en cuenta que el c\[AAcute]lculo del concentrador solo es adecuado \
+para ciertos rangos de valores.\
+\>", "GuideAbstract",
+ CellID->2001916300],
+
+Cell[BoxData[
+ GraphicsBox[
+  TagBox[RasterBox[CompressedData["
+1:eJztnV2uJDluRtseP3gb3kmPlzBewQxgvxoYGzDmrdbihRi1s3Cnq9KRHVeK
+oCRSJKXzAWem695IiUGJ/FJx//7pL//+p3/7+19++eU//vG3//nTn//rj3/9
+65//9i//8Ns//vlv//mvf/nDb//x33/3yy//8xuvDx7HASDmtWV+bBv/WAC8
+oR4A1oc6BzihHgDWhzoHOKEeANaHOgc4oR4A1oc6BzihHgDWhzoHOKEeANaH
+Ogc4oR4A1oc6BzihHgDWhzoHOKEeANaHOgc4oR4A1oc6Bzh51wM1AbAu1DjA
+Cb4HsD7UOMAJ9QCwPtQ5wAn1ALA+1DnACfUAsD7UOcAJX98DWB9qHOCEegBY
+H+oc4IR6AFgf6hzghHoAWB/qHOCEr+8BrA81DnBCPQCsD+9vAU6oBYD1wfcA
+TqgHgPWhzgFOqAeA9aHOAU6oB4D1oc4BTqgHgPWhzgFOqAeA9aHOAU6oB4D1
+oc5hVz73vgTveGEdSvvpus+e9mDtc3eve9rbrTUBMAvvms0C6wIR8e4fABnx
+rtvoeK8P6wQlvPcj5EGq67Wlf/eOf3ddbZzrx9//LY1LkBf3Oo7A6P4Z3Xus
+G0iI0C9rfSqSRjxgZB5LzZwrs+ih473k27dvw7mWivctcMesXr6KZvveDLX2
+pd301IN37p8j73Wf8lz6+Mg4pc/hgfuB37VrRr7wvViS9PPdeqam39XyXMnt
+rV57WLpOeN9+4Hl9wvf2kbSf79IzhV4xnOe7z0vHks5V89cd1nM38Lx+4Xv7
+SFonO/TJhjPSUJ7vPj86zvWanvPgEWAtYHwPozbhe3to5Ky3Up+U+l3vfm31
+qqdrnvbwqO+tsq67gefFl8ca4XunWnr69XMr9cdWz2vdr9LXtbz3kOzhWswt
+fvhzHvc1gvZ9jGKKNfKVtLfX1imz77Xc84jvtbxG6kc9c7few0rva3YB38sh
+1shP0jNNwznQve5bGPE86X7Vul7Dc5V8233d4Hk/o9hirXx01wNb+2S2vtj6
+/f+SnF31NEdNd+85empk1PNq4xwB1hF+D700j1grH0nPcKv53tM9tXz+Tp++
+1yKNM+bTeD2qjOO+niDb1yiWWCsftfpZy/cOHgH6QIlWr3+6V0k+WqXld7Xx
+tMbJsN47QR/Npdnr9X4f/uuvv06ZL6J6zixP+YraB1/38Hkfr//+/v37l/u8
+XtOjz3F699fVU95j9sYzek8vve7lGk8pZ3zfp7/voXHN8CSP9yk775HW9/8D
+17r3guOjH0jPeSOKej4bVeMZ2X3Nd4Oznq5mPDPG9+aqZ00z+l6r30XzqpGx
+tH288+cE3f1gF/A9XeF766l3TVf3vRGt6HmfY3XO7e4Hu4Dv6equDq8fK9Xt
+5zV3nx+sL1HsWn2lZR6tcVrH1xijNqZ0ziNAD6jF2/u9lqX71PQpzboo1V3P
+OKP3cwTwhZWx6AkWtWHVjyzmfKojbWbeq+R+Z62j5hwz9pkk/iNAH6jp7Xs9
+0sjl0zita9f6cWlsvYqwD3bBuqe1KFPPbMmZ9nwt92s9j8c9ac09MpZUtTPS
+zbih6r8Ub488923ruo7E2qso+2EXrPtaq6LMd/f56+eexnxp9Pc5j9yzdU6f
+rr/mrPTaqBrdZ5l8T5KHXklzOLpXrbDMzd19HwE8YkVGPAP5iXWbp5Fcl37v
+1kN/nV73d/f1eU3ve7cnH9F+7/Wk65r0zq9Rg7V58D98D30V6zZPmr4n6K9h
+fa9X2ucr7Th74tGqv4Y53L1iJeifOcW6zZOV71XGD1Hzoz5UGkPb62pzjWpG
+3J3vO9z9YhXonznFus3TSr4X8ZynIcvxLGKXjlGYz90zVoD+mVOs2zxZv7ef
+1ddmnfNK41j5XWk+bXmc8+5edwTwjezQP3OKdZunFXwv0jnPQjPqQeNeel/L
+uQ/fQ/jeTGn6nuDzLnVucZaZ4Xelua3Vc1/a+T0CeEdm6J85xbrN00q+Z3WP
+1zFmet517plzSefVig/vw/d2Fus2T5l976k3W5/zZsl7Tsv8Pszn7iEZoX/m
+FOs2T6v4nsW9Xcfw2pee9VC779LvLNCaA9/Tqwt6aB6xZnM1w/eOiZ5nec7z
+UKT5tXNSGuf9b/5WO763k1izuVrZ93qF79VjsPS8wsfdfSQjEfYMahNrNlcj
++fbwvVrvXe2cV4opShxWnnf9/BHAQzISZc8guVizucrse1r3URojyj6MEodW
+LNIx8D18byexZnOl4XuCcc3qWcOjar9zLYKixfNSb0wtr+PMh+/tJNZsrnrz
+Xfv7e5VxTepZy6cy+F4k9eSo9TWX/eXuJdmIuG9QXdH6zurK4nu1Z5AWzzYj
+KWJcrT/HMHo+PAL4SDbeuRv9u+BojiLW+crq7fm//vpr9TWf42l8P/rd337o
+revX60rjRusTUevhyfuu+e3Jq+Ye2o2o+waVxXrNVa/v3b1m1llvRNHPeW9l
+iK0Uo8VZ/AjgJ1mIvq/R78V6zdWo7wnGG6pfi6+9WfiolTLFp5nT0rofAfwk
+Cxn2NjrFWs2Xlu9V+p6672nda4a9li1G4/O4u59kIcv+Rj/EWs2Xle8dCvWr
+9bsg784k0b6m96ks9WDheYV/u/tJJrLsHZSnzlfTqO9ZvT9/+r7R1njxPRtp
++V5pDM58+N7qYq181JL3Ow/R7lHa57zax6IqY5y9sd69Hu/zqR80R1nqfDXt
+6nvRtUusT6/F98bqJ8P+2Vmsk4+k79elnqfRn7TODrVnZhn2WKZYX+qJV/oa
+fA/fW1Wsk4+i+l7v195q94Lv2ao13p7nDEcAP8lCtv2zq1gnP2n63qFUsyO/
+56N0H9n2V+Z4pee3To9095QMZHuft6tYIz/1+l7l9Sr12up7T/eQbX9li/el
+nn3UMa67p2Qh4x7aTayRr1p8w8rzjk7fW83zXsoY80tWZ268D99bUayRr6T9
+6vp5b99rPWNkUcaYX5LsE3xvvvehmMpa56sogu8NPv96vCbT3soW71vXfGvl
+H9/D91ZUxt60kqTe9nkOK7xmmu9Jr826rzLG/Ja272nvs53Iuv93Eevjr9Ia
+SP1wlu+19tGs+ypr3C9pnvNK4x0B/CQLWZ937CLWxl8jvnco1mhrjJLrsylz
+PVid8/C9ce9DscTa+Ovu+VRpXWb6Xk8fzbynMsf+kpXn4Xv43kpibWKox/cO
+5fp8iqvnXrIpc+wvafpe5WPufpKJzHtpZWWv81Xkfda7e5baujcy76nMsb80
+Ev+sPbcT2ffTqmJdYiiy743cRzZljv2l3vjv/u4ivofvrSbWJYYkvlf4nHpd
+jv69dXzPVz35f7oW39Opr6x7akWxJnEUwfdG90P2Os8c+0ut+Zdei+/p1Rjy
+F2sSS5JnnD9/hl39vajGXljF93r/HlMESfL/ur+7Z5sPY7p7STYy18SKYj1i
+qeYblx6lXosa/T67572UOfa3ntagZ43wPXxvJbEesVTzDou+o+l7mmdGT2WP
+/yXJMwN8z8/3Mu+tVcRaxNLds8cZvqcZb0Zlj/+lp/dNPfeH7+F7K4m1iKWV
+fC/Tnsoe/1uS/dNyjzP24RPZPbeUuyxfP/ao7549vBtaeWWd4tGTe9ZpPw6B
+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
+XO5rC7/f3xK1vK/ZUZo19TT+LO2+ptrK1Ae1z1YWntcyptU57zpeJUb39YSv
++1qilvc3O2pF33vPi3SUrQ9GOFuVxmkdt+XnyT/Hf4rnaZ5Ma70Lrfvy7lrr
+np9FlvdPfvMqcy/sOWNpnBWv49Q+1zLOyLxP95R5jXdidC9LP4d0RH7zKntP
+bPExC88b8b2eOEr3gOetQ+8+vnsvhGxEjvNqlZ7Y0gdG9mtLX5KM1fo7YSS+
+V4K/E5uHpz3Wsu7ITuQ5p1Y8C/R4wkC+bq+TjDXL944AawN9e7i2/pI9gexE
+nvNp9b6o6Xu91z+N1SO8bn1afe/6cfrxKcs8eOWZde3XDj3Sw/furhvtSXje
+PrTuVzyvLMt8eOSa9e3Trv2xx/taf8bgml/Jx1uE3+3FiO+hH8L30Es798nW
+s1+P711zXMl5s/C7/eCsNy58D9Er73tKz5nwKcetYzTE4p5DmL9Pr8Lz7oXv
+7Sv6pqynWPtez2tYN7jugddziNLv3+n5O8mr6zM/379/Nxt7lg/he3XV6oK+
+Kecuh1a85+Rn7aCE9nu0kiSvvc7x+e+Z9QIgwbNmV4f8gzXe/QMgI951uwPk
+HKzx7iPg17drH2/dO+//9t7LsAaj+xJAyoye2/vMfYf9f+dPADtBHQDsAbUO
+8ANqAWAPqHWAH1ALAHtArQOcUAsA64PvAZxQCwDrg+8BnFALAOuD7wGcUAsA
+64PvAZxQCwDrg+8BnFALAOuD7wGcUAsA64PvAZxQCwDrg+8B/IBaANgDah3g
+hFoAWB98D+CEWgBYH3wP4IRaAFgffA/ghFoAWB98D+CEWgBYH3wP4IRaAFgf
+fA8AAHYC3wMAgJ3A9wAAYCfwPQAA2Al8DwAAdgLfAwCAncD3AABgJ/A9AADY
+CXwPAAB2At8DAIDdwPMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAHLzmw6Yj/e6AwDsinf/3xXvdYeY1PbJyD7z3usAmljUWc/8vbFa
+3ZNWDrx7IOyFdz8ByMC3b98O71pdhVJ+vWOCPfDuIwDZ8K7ZVSCvMJvX+9bP
+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
+    "], {{0, 418}, {
+    446, 0}}, {0, 255},
+    ColorFunction->RGBColor],
+   BoxForm`ImageTag["Byte", ColorSpace -> "RGB", Interleaving -> False],
+   Selectable->False],
+  BaseStyle->"ImageGraphics",
+  ImageSize->{255., Automatic},
+  ImageSizeRaw->{446, 418},
+  PlotRange->{{0, 446}, {0, 418}}]], "GuideAbstract",
+ CellID->1243046928]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  InterpretationBox[
+   StyleBox[
+    GraphicsBox[{},
+     BaselinePosition->Baseline,
+     ImageSize->{6, 0}],
+    CacheGraphics->False],
+   Spacer[6]]]],
+ "Reference"
+}], "GuideReferenceSection",
+ WholeCellGroupOpener->True],
+
+Cell["", "SectionHeaderSpacer"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["KtEjeTraccionAgujero"]],
+    "paclet:Concentradores/ref/KtEjeTraccionAgujero"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " Eje circular con cambio de secci\[OAcute]n sometido a tracci\[OAcute]n"
+}], "GuideText",
+ CellID->203374175],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["KtEjeFlexionAgujero"]],
+    "paclet:Concentradores/ref/KtEjeFlexionAgujero"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ "  Eje circular con cambio de secci\[OAcute]n sometido a flexi\[OAcute]n"
+}], "GuideText",
+ CellID->1463276848],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{Cell[
+     TextData["KtEjeTorsionAgujero"]],
+    "paclet:Concentradores/ref/KtEjeTorsionAgujero"},
+   "RefLink",
+   BaseStyle->"InlineFunctionSans"]], "InlineFunctionSans"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ "  Eje circular con cambio de secci\[OAcute]n sometido a torsi\[OAcute]n"
+}], "GuideText",
+ CellID->479295726]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Orificios en ejes",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "GuideColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Concentradores de tensi\[OAcute]n geom\[EAcute]tricos (Kt)", 
+         ButtonData -> "paclet:Concentradores/guide/Concentradores", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}]}]}}, ColumnAlignments -> 
+    Left], "ExampleCounter" -> 1, "NeedPlatMsgIn" -> None, "RootCaptions" -> 
+  "", "Metadata" -> {
+   "built" -> "{2017, 11, 28, 7, 5, 7.152765}", 
+    "history" -> {"0.0", "", "", ""}, "context" -> "Concentradores`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "Concentradores Guide", "language" -> "en", "paclet" -> "Concentradores", 
+    "status" -> "None", "summary" -> 
+    "C\[AAcute]lculo de los concentradores para los orificios en ejes. Debe \
+tenerse en cuenta que el c\[AAcute]lculo del concentrador solo es adecuado \
+para ciertos rangos de valores.", "synonyms" -> {}, "tabletags" -> 
+    DocumentationBuild`Make`Private`tabletaggingrules$2687, "title" -> 
+    "Orificios en ejes", "titlemodifier" -> "", "windowtitle" -> 
+    "Orificios en ejes", "type" -> "Guide", "uri" -> 
+    "Concentradores/guide/AgujeroEje"}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[589, 21, 3323, 79, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[3937, 104, 59, 1, 70, "GuideTitle",
+ CellID->942062912],
+Cell[3999, 107, 235, 5, 70, "GuideAbstract",
+ CellID->2001916300],
+Cell[4237, 114, 12475, 210, 70, "GuideAbstract",
+ CellID->1243046928]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16749, 329, 257, 11, 70, "GuideReferenceSection"],
+Cell[17009, 342, 31, 0, 70, "SectionHeaderSpacer"],
+Cell[17043, 344, 380, 11, 70, "GuideText",
+ CellID->203374175],
+Cell[17426, 357, 379, 11, 70, "GuideText",
+ CellID->1463276848],
+Cell[17808, 370, 378, 11, 70, "GuideText",
+ CellID->479295726]
+}, Open  ]],
+Cell[18201, 384, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
